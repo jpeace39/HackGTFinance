@@ -56,6 +56,10 @@ body {
     font-weight: 700;
 }
 
+#portfolio tr td {
+    cursor: pointer;
+}
+
 #portfolio td, th {
     font-size: 14px;
     border: 1px solid #dddddd;
@@ -75,15 +79,15 @@ body {
     height: 25px;
     border: 0;
     font-size: 1em;
+    text-indent: 5px;
 }
 
 /*OVERLAY STYLING*/
 #overlay {
-    position: fixed;
-    display: block;
-    visibility: hidden;
-    width: 100%;
-    height: 100%;
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
     top: 0;
     left: 0;
     right: 0;
@@ -93,7 +97,7 @@ body {
     cursor: pointer;
 }
 
-#overlay_exit {
+#overlay-exit {
     text-align: right;
     padding: 20px;
     font-size: 3em;

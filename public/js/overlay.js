@@ -1,5 +1,7 @@
-$(document).ready(function() {
-    $('.overlay_control').click(function() {
-        $('#overlay').css('visibility', 'visible');
-    });
-});
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}

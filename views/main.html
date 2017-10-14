@@ -4,9 +4,17 @@
         <link href='/public/css/styles.css' rel='stylesheet' type='text/css'/>
         <link rel='stylesheet' href='//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css'>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/resources/demos/style.css">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://www.blackrock.com/tools/resources/css/api/main.css">
+        <link rel="stylesheet" href="https://www.blackrock.com/tools/resources/css/api/tables.css">
+        <link rel="stylesheet" href="https://www.blackrock.com/tools/resources/css/api/theme.css">
+
         <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+
         <script src='//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js'></script>
         <meta name='viewport' content='width=device-width, initial-scale=1'/>
         <meta charset='UTF-8'>
@@ -14,8 +22,8 @@
 
     <body>
         <div id='overlay'>
-            <div id='overlay_exit'>
-            <i class="fa fa-angle-down" aria-hidden="true" alt='cancel' style="color: white !important;"></i>
+            <div id='overlay-exit'>
+                <i class="fa fa-angle-down" aria-hidden="true" alt='cancel' onclick="off()" style="color: white !important;"></i>
             </div>
         </div>
         <div id="portfolio">
@@ -28,14 +36,14 @@
                     <th>Current Price</th>
                     <th>Overall Sentiment</th>
                 </tr>
-                <tr class="overlay_control" onclick="off()">
+                <tr class="overlay_control" onclick='on()'>
                     <td>AAPL</td>
                     <td>Apple Inc.</td>
                     <td>$100.00</td>
                     <td>$150.00</td>
                     <td>45%</td>
                 </tr>
-                <tr class="overlay_control">
+                <tr class="overlay_control" onclick='on()'>
                     <td>MSFT</td>
                     <td>Microsoft Corp.</td>
                     <td>$100.00</td>
@@ -49,13 +57,6 @@
                     <td><input type='text' class='input' name='shares'  placeholder="# of Shares"></td>
                     <td><input type="text" class='input' id="datepicker" name='date' placeholder='Date Purchased'</td>
                 </tr>
-                <!-- <tr>
-                    <td valign='bottom' align='left'>
-                        <button>
-                            Add Stock
-                        </button>
-                    </td>
-                </tr> -->
             </table>
             <div class='add_button'>
                 <button class='add_stock'>Add Stock</button>
@@ -74,4 +75,7 @@
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     <script src="https://www.blackrock.com/tools/api/js/hackathon"></script>
+    <script src="https://www.blackrock.com/tools/resources/js/api/bootstrap.js"></script>
+    <script src="https://www.blackrock.com/tools/resources/gen/js/utils/StringUtil.js"></script>
+    <script src="/public/js/blackrock_search.js"></script>
 </html>

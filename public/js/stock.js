@@ -1,11 +1,10 @@
 $(document).ready(function() {
     $('#datepicker').datepicker();
-    var arr = [];
 
-    arr.push('AAPL');
-    arr.push('MSFT');
+    // Holds the portfolio
+    var portfolio = [];
+    var stock = {'ticker': '', 'name': '', 'bought': '', 'current': '', 'sentiments': ''};
 
-    for (i = 0; i < arr.length; i++) {
-        console.log(arr[i]);
-    }
+    portfolio.push(stock);
+    console.log(portfolio);
 });
