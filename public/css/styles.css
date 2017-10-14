@@ -1,9 +1,9 @@
 /*TABLE OF CONTENTS*/
     /*GENERAL THEME STYLING*/
     /*TABLE STYLING*/
+    /*OVERLAY STYLING*/
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Pattaya|Work+Sans:400,200,300|Raleway|Signika|Roboto:400,700); /*Google Fonts*/
-
 
 /*GENERAL THEME STYLING*/
 html {
@@ -13,6 +13,7 @@ html {
 body {
   -webkit-font-smoothing: subpixel-antialiased;
   background: white;
+
 }
 
 /*Header 1*/
@@ -74,4 +75,26 @@ body {
     height: 25px;
     border: 0;
     font-size: 1em;
+}
+
+/*OVERLAY STYLING*/
+#overlay {
+    position: fixed;
+    display: block;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(10,10,25,1);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#overlay_exit {
+    text-align: right;
+    padding: 20px;
+    font-size: 3em;
 }
