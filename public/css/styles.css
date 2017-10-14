@@ -1,0 +1,77 @@
+/*TABLE OF CONTENTS*/
+    /*GENERAL THEME STYLING*/
+    /*TABLE STYLING*/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Pattaya|Work+Sans:400,200,300|Raleway|Signika|Roboto:400,700); /*Google Fonts*/
+
+
+/*GENERAL THEME STYLING*/
+html {
+  font-size: 100%;
+}
+
+body {
+  -webkit-font-smoothing: subpixel-antialiased;
+  background: white;
+}
+
+/*Header 1*/
+#portfolio h1, h1 a {
+  line-height: 100%;
+  font-family: "Roboto", sans-serif ;
+  font-size: 24px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+#portfolio .add_stock {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#portfolio .add_button {
+    text-align: center;
+}
+
+/*TABLE STYLING*/
+#portfolio table {
+    margin: auto;
+    width: 50%;
+    font-family: "Roboto", arial, sans-serif;
+    border-collapse: collapse;
+}
+
+#portfolio th {
+    font-weight: 700;
+}
+
+#portfolio td, th {
+    font-size: 14px;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 15px;
+}
+
+#portfolio tr {
+  line-height: 18px;
+}
+
+#portfolio tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#portfolio table td .input {
+    height: 25px;
+    border: 0;
+    font-size: 1em;
+}
