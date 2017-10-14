@@ -5,77 +5,103 @@
         <link rel='stylesheet' href='//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css'>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-        <link rel="stylesheet" href="https://www.blackrock.com/tools/resources/css/api/main.css">
-        <link rel="stylesheet" href="https://www.blackrock.com/tools/resources/css/api/tables.css">
-        <link rel="stylesheet" href="https://www.blackrock.com/tools/resources/css/api/theme.css">
-
-        <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-
-
-        <script src='//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js'></script>
         <meta name='viewport' content='width=device-width, initial-scale=1'/>
         <meta charset='UTF-8'>
     </head>
 
     <body>
-        <div id='overlay'>
-            <div id='overlay-exit'>
-                <i class="fa fa-angle-down" aria-hidden="true" alt='cancel' onclick="off()" style="color: white !important;"></i>
-            </div>
-        </div>
-        <div id="portfolio">
-            <h1>Portfolio</h1>
-            <table class="majornews">
-                <tr>
-                    <th>Stock Ticker</th>
-                    <th>Company Name</th>
-                    <th>Buy Price</th>
-                    <th>Current Price</th>
-                    <th>Overall Sentiment</th>
-                </tr>
-                <tr class="overlay_control" onclick='on()'>
-                    <td>AAPL</td>
-                    <td>Apple Inc.</td>
-                    <td>$100.00</td>
-                    <td>$150.00</td>
-                    <td>45%</td>
-                </tr>
-                <tr class="overlay_control" onclick='on()'>
-                    <td>MSFT</td>
-                    <td>Microsoft Corp.</td>
-                    <td>$100.00</td>
-                    <td>$150.00</td>
-                    <td>45%</td>
-                </tr>
-                <tr class="overlay_control">
-                    <td><input type='text' class='input' name='ticker'  placeholder='Ticker'></td>
-                    <td><input type='text' class='input' name='company' placeholder="Company"></td>
-                    <td><input type='text' class='input' name='buy_price' placeholder="Price Bought"></td>
-                    <td><input type='text' class='input' name='shares'  placeholder="# of Shares"></td>
-                    <td><input type="text" class='input' id="datepicker" name='date' placeholder='Date Purchased'</td>
-                </tr>
-            </table>
-            <div class='add_button'>
-                <button class='add_stock'>Add Stock</button>
-            </div>
+        <div class="tab">
+
+        	<ul class="tabs">
+                <li><a href='#'>Portfolio</a></li>
+        	</ul>
+
+        	<div id="mytable" class="tab_content">
+                <div class="tabs_item"></h4>
+                    <table class="table-fill">
+                        <thead>
+                            <tr>
+                                <th class="text-left">Ticker</th>
+                                <th class="text-left">Company</th>
+                                <th class="text-left">Buy Price</th>
+                                <th class="text-left">Current Price</th>
+                                <th class="text-left">Public Sentiment</th> <!--insert drop down to choose social media source-->
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover" id='table_body'>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><input type='text' class='input input_ticker' name='input_ticker' placeholder='Ticker'></td>
+                                <td><input type='text' class='input input_price' name='input_price' placeholder='Purchase Price'></td>
+                                <td><input type='text' class='input input_shares' name='input_shares' placeholder='# of Shares'></td>
+                                <td><input type='text' class='input input_date' id='datepicker' name='input_date' placeholder='Purchase Date'></td>
+                                <td><button type='submit' class='submit add_stock'>Add Stock</button></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div>
+                    <h3 class='center'><span class='error'></span></h3>
+                    <h3 center='center'><span class='message'></span></h3>
+                </div>
+
+        		<div class="tabs_item">
+        			<h4>Apple Company</h4>
+        			<p>Apple company sells apples and other fruits. Sometimes it sells technology too. </p>
+        		</div> <!-- / tabs_item -->
+
+        		<div class="tabs_item">
+
+        			<h4>Microsoft</h4>
+        			<p>They made a lot of cool things. That's probably why they have so much money.</p>
+        		</div> <!-- / tabs_item -->
+
+        		<div class="tabs_item">
+
+        			<h4>Facebook</h4>
+        			<p>This website was made to meet girls. Now Mark Zuckerbag makes $1000000 everytime someone says his name.</p>
+        		</div> <!-- / tabs_item -->
+
+        		<div class="tabs_item">
+        			<h4>Transocean LTD</h4>
+        			<p>They made me a lot of money one time. It was awesome. </p>
+        		</div> <!-- / tabs_item -->
+
+        		<div class="tabs_item">
+        			<h4>ENSCO</h4>
+        			<p>They have a really predictable stock. Just buy it when they fall super hard and you'll get your moneys worth. Promise.</p>
+        		</div> <!-- / tabs_item -->
+
+        		<div class="tabs_item">
+        			<h4>Boston Scientific</h4>
+        			<p>The first medical technology stock I ever bought...Great returns.</p>
+        		</div>
+        	</div>
         </div>
 
-        <div class='error'>
-            <h3 class='center'></h3>
+        <!-- <div class="container">
+            <h2 style="text-align:center;">
+            Holdings
+            </h2>
+            <table id="holdings" class="table table-striped table-bordered" cellspacing="0" width="100%"></table>
         </div>
+        <h2 style="text-align:center;">
+          Performance ($10,000 Investment)
+          </h2>
+          <div id="returns" style="height: 400px; min-width: 310px; min-height:400px; display:block;"></div> -->
+          <div id="container" style="height: 400px; min-width: 310px; min-height:400px; display:block;"></div>
     </body>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="/public/js/stock.js"></script>
-    <script src="/public/js/overlay.js"></script>
+    <script src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     <script src="https://www.blackrock.com/tools/api/js/hackathon"></script>
-    <script src="https://www.blackrock.com/tools/resources/js/api/bootstrap.js"></script>
-    <script src="https://www.blackrock.com/tools/resources/gen/js/utils/StringUtil.js"></script>
+    <script src="/public/js/tabs.js"></script>
+    <script src="/public/js/table.js"></script>
+    <script src="/public/js/tabs_extended.js"></script>
     <script src="/public/js/blackrock_search.js"></script>
 </html>
